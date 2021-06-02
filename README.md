@@ -17,8 +17,14 @@ export CYCLONEDDS_URI=file:///etc/cyclone/cyclonedds.xml
 export CYCLONE_INCLUDE=/opt/ros/foxy/include
 export CYCLONE_LIB=/opt/ros/foxy/lib/x86_64-linux-gnu
 source /home/user/adehome/AutowareAuto/install/setup.bash
-alias source_aa='source ~/adehome/AutowareAuto/install/setup.bash'
+
+alias echo_ct='ros2 topic echo /raptor_dbw_interface/ct_report'
+alias echo_sys='ros2 topic echo /raptor_dbw_interface/misc_report_do'
+alias fm1='/home/user/VehicleConfig/FM1.sh'
+alias restart_autoware='sudo systemctl restart autoware.service'
 alias spoof_gnss='ros2 topic pub --rate 10 /inspva novatel_gps_msgs/msg/Inspva "{status: INS_SOLUTION_GOOD}"'
+alias start_autoware='sudo systemctl start autoware.service'
+alias stop_autoware='sudo systemctl stop autoware.service'
 ```
 
 # Network Configuration
