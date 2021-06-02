@@ -1,7 +1,6 @@
 # Assumptions
 - Ubuntu 20.04 installed and updated
 - ROS2 Foxy installed from Debian binaries (https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
-- AutowareAuto (cloned from https://gitlab.com/cuicardeeporange/AutowareAuto) installed in /home/user/adehome/AutowareAuto using instructions from https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-no-ade.html
 
 # Cyclone DDS
 ```bash
@@ -24,3 +23,12 @@ alias spoof_gnss='ros2 topic pub --rate 10 /inspva novatel_gps_msgs/msg/Inspva "
 
 # Network Configuration
 Copy `01-network-manager-all.yaml` to `/etc/netplan` and run `sudo netplan apply`.
+
+# Sensor Prerequisites
+- Install Vimba SDK 4.2 from https://www.alliedvision.com/en/products/software.html
+- After de-compressing with `tar xvf`, move the `Vimba_4_2` folder to `/opt` with `sudo mv Vimba_4_2/ /opt`
+- `cd /opt/Vimba_4_2/VimbaGigETL/`
+- `sudo ./Install.sh`
+
+# Autoware Install
+Install Autoware.Auto (cloned from https://gitlab.com/cuicardeeporange/AutowareAuto) to /home/user/adehome/AutowareAuto using instructions from https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-no-ade.html
