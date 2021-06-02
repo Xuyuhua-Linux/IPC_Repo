@@ -1,5 +1,7 @@
 # Assumptions
-AutowareAuto (cloned from https://gitlab.com/cuicardeeporange/AutowareAuto) is installed in /home/user/adehome/AutowareAuto.
+- Ubuntu 20.04 installed and updated
+- ROS2 Foxy installed from Debian binaries (https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
+- AutowareAuto (cloned from https://gitlab.com/cuicardeeporange/AutowareAuto) installed in /home/user/adehome/AutowareAuto using instructions from https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-no-ade.html
 
 # Cyclone DDS
 ```bash
