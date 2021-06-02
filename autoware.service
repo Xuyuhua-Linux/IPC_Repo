@@ -1,0 +1,14 @@
+[Unit]
+Description=Main Autoware Vehicle Launch
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=user
+WorkingDirectory=/home/user/VehicleConfig
+Type=simple
+ExecStart=/bin/bash /home/user/VehicleConfig/main_launch.bash
+TimeoutStopSec=5s
+
+[Install]
+WantedBy=multi-user.target
