@@ -21,3 +21,6 @@ source /home/user/adehome/AutowareAuto/install/setup.bash
 alias source_aa='source ~/adehome/AutowareAuto/install/setup.bash'
 alias spoof_gnss='ros2 topic pub --rate 10 /inspva novatel_gps_msgs/msg/Inspva "{status: INS_SOLUTION_GOOD}"'
 ```
+
+# Network Configuration
+Copy `01-network-manager-all.yaml` to `/etc/netplan` and run `sudo netplan apply`.

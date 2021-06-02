@@ -1,0 +1,33 @@
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp2s0f0:
+      dhcp4: no
+    enp2s0f1:
+      dhcp4: no
+    enp2s0f2:
+      dhcp4: no
+    enp2s0f3:
+      dhcp4: no
+    eno1:
+      dhcp4: no
+      addresses:
+        - 10.42.0.200/24
+      gateway4: 10.42.0.1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+  bonds:
+    bond1:
+      interfaces: [enp2s0f0, enp2s0f1, enp2s0f2, enp2s0f3]
+      addresses:
+        - 10.42.0.200/24
+      gateway4: 10.42.0.1
+      parameters:
+        mode: 802.3ad
+        transmit-hash-policy: layer3+4
+        mii-monitor-interval: 1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+      mtu: 9000
