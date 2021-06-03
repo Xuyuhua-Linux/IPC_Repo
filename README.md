@@ -1,5 +1,5 @@
 # Assumptions
-- Ubuntu 20.04 installed and updated
+- Ubuntu 20.04 installed and updated with the user `user`
 - ROS2 Foxy installed from Debian binaries (https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html)
 
 # Cyclone DDS
@@ -26,6 +26,19 @@ alias spoof_gnss='ros2 topic pub --rate 10 /inspva novatel_gps_msgs/msg/Inspva "
 alias start_autoware='sudo systemctl start autoware.service'
 alias stop_autoware='sudo systemctl stop autoware.service'
 ```
+
+# CAN Channel Configuration
+- Copy `can.conf` to `/etc/modules.d/` with `sudo cp can.conf /etc/modules.d/`
+- Install the driver for the PCIe CAN channels
+  - Download the "Linux Socket CAN driver for CAN cards" from https://www.advantech.com/support/details/driver?id=GF-GRSC
+  - Expand the downloaded file with `tar xvf advSocketCAN*`
+  - `cd advSocketCAN*/driver`
+  - `sudo apt update && sudo apt install -y flex`
+  - `sudo make && sudo make install`
+- Create a `cron` job that runs on reboot that sets up the CAN channels
+  - `sudo crontab -e`
+  - Add the line `@reboot /home/user/VehicleConfig/can_startup.bash`
+- Reboot the computer
 
 # Network Configuration
 Copy `01-network-manager-all.yaml` to `/etc/netplan` and run `sudo netplan apply`.
