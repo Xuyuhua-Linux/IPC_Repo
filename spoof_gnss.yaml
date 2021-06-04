@@ -1,0 +1,7 @@
+session_name: gnss_spoofing
+windows:
+  - window_name: Spoof GNSS
+    layout: tiled
+    panes:
+    - shell_command:
+      - 'ros2 topic pub --rate 10 /inspva novatel_gps_msgs/msg/Inspva "{status: INS_SOLUTION_GOOD}"'
