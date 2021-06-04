@@ -1,7 +1,7 @@
 [Unit]
 Description=Zennoh DDS plugin launch
-Wants=network-online.target
-After=network-online.target
+Wants=network-online.target autoware.service
+After=network-online.target autoware.service
 
 [Service]
 User=user
