@@ -43,6 +43,8 @@ alias stop_autoware='sudo systemctl stop autoware.service'
 # Network Configuration
 Copy `01-network-manager-all.yaml` to `/etc/netplan` and run `sudo netplan apply`.
 
+Be sure that the fibre cable on the ADLINK side is plugged into the **right** port (looking at the Adlink from the front of the car).
+
 # Sensor Prerequisites
 - Install Vimba SDK 4.2 from https://www.alliedvision.com/en/products/software.html
 - After de-compressing with `tar xvf`, move the `Vimba_4_2` folder to `/opt` with `sudo mv Vimba_4_2/ /opt`
