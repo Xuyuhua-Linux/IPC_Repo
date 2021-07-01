@@ -33,8 +33,10 @@ alias stop_autoware='sudo systemctl stop autoware.service'
   - Download the "Linux Socket CAN driver for CAN cards" from https://www.advantech.com/support/details/driver?id=GF-GRSC
   - Expand the downloaded file with `tar xvf advSocketCAN*`
   - `cd advSocketCAN*/driver`
-  - `sudo apt update && sudo apt install -y flex`
-  - `sudo make && sudo make install`
+  - `sudo apt update && sudo apt install -y flex bison`
+  - Edit the file Makefile
+    - In the line `$(MAKE) -w -C $(KDIR) SUBDIRS=$(PWD) modules`, replace `SUBDIRS=$(PWD)` with `M=$(shell pwd)`
+  - Run `sudo make && sudo make install`
 - Create a `cron` job that runs on reboot that sets up the CAN channels
   - `sudo crontab -e`
   - Add the line `@reboot /home/user/VehicleConfig/can_startup.bash`
