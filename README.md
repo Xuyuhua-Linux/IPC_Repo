@@ -55,3 +55,10 @@ Be sure that the fibre cable on the ADLINK side is plugged into the **right** po
 
 # Autoware Install
 Install Autoware.Auto (cloned from https://gitlab.com/cuicardeeporange/AutowareAuto) to /home/user/adehome/AutowareAuto using instructions from https://autowarefoundation.gitlab.io/autoware.auto/AutowareAuto/installation-no-ade.html
+
+# Real time configuration
+We decided to use the lowlatency Kernel rather than building the full real-time kernel from source for now. This allows to assign RT priorities to threads and should still show significantly increased RT performance in comparison to the generic kernel. To do this: 
+- `sudo apt-get install linux-lowlatency-hwe-20.04` (Installation)
+- Change the GRUB settings to boot into this kernel. This can be done from `etc/default/grub/` by setting `GRUB_DEFAULT=1`. This makes grub choose the first menu entry as listed in `/boot/grub/grub.cfg`. Double check if this is the lowlatency kernel. 
+- Reboot via `sudo shutdown -r now`
+- Check if the kernel was correctly installed via `uname -r`. It should output this `5.8.0-59-lowlatency`. The running number 59 might change due to different builds. 
