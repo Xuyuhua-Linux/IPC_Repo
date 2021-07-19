@@ -47,6 +47,11 @@ Copy `01-network-manager-all.yaml` to `/etc/netplan` and run `sudo netplan apply
 
 Be sure that the fibre cable on the ADLINK side is plugged into the **right** port (looking at the Adlink from the front of the car).
 
+# Install zenoh
+- Go to home directory via `cd ~`
+- Clone zenoh `git clone --branch IAC https://github.com/eclipse-zenoh/zenoh-plugin-dds`
+- Build zenoh via `cargo build --release`
+
 # Sensor Prerequisites
 - Install Vimba SDK 4.2 from https://www.alliedvision.com/en/products/software.html
 - After de-compressing with `tar xvf`, move the `Vimba_4_2` folder to `/opt` with `sudo mv Vimba_4_2/ /opt`
