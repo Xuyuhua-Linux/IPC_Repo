@@ -7,5 +7,5 @@ export CYCLONE_LIB=/opt/ros/foxy/lib/x86_64-linux-gnu
 export ROS_DOMAIN_ID=1
 export LD_LIBRARY_PATH=/usr/local/lib/
 source /home/user/adehome/AutowareAuto/install/setup.bash
-ros2 launch iac_launch master.launch.py
+ros2 launch iac_launch master.launch.py enable_cameras:=false enable_radars:=false enable_lidars:=false
 
