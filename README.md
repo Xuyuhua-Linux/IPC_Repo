@@ -53,11 +53,11 @@ In the Chipset -> PCH-IO Configuration -> M.2 Device Configuration screen, make 
 - Install the driver for the M2 CAN channel (4 ports)
   - Download EGPC-B4S1 Driver https://www.innodisk.com/en/products/embedded-peripheral/communication/egpc-b4s1
   - Unpack folder and mode to `EGPC-B4S1/Linux/SocketCAN_v1.11`
-  - compile with `make`
+  - compile with `make` and then `sudo make install`
   - sobstitute current f81601 module with the new one: 
 ```
 sudo mv /usr/lib/modules/5.8.0-59-generic/kernel/drivers/net/can/sja1000/f81601.ko /usr/lib/modules/5.8.0-59-generic/kernel/drivers/net/can/sja1000/f81601_old.ko
-sudo mv release/f81601.ko /usr/lib/modules/5.8.0-59-generic/kernel/drivers/net/can/sja1000/
+depmod -a
 ```
 - Reboot the computer
 
