@@ -10,12 +10,6 @@ ip link set can2 type can bitrate 500000
 ip link set can3 type can bitrate 500000
 ip link set can4 type can bitrate 500000
 ip link set can5 type can bitrate 500000
-ifconfig can0 txqueuelen 1000
-ifconfig can1 txqueuelen 1000
-ifconfig can2 txqueuelen 1000
-ifconfig can3 txqueuelen 1000
-ifconfig can4 txqueuelen 1000
-ifconfig can5 txqueuelen 1000
 ip link set up can0
 ip link set up can1
 ip link set up can2
